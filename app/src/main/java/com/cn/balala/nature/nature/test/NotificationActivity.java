@@ -12,7 +12,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.cn.balala.nature.R;
-import com.cn.balala.nature.nature.acitivity.MainActivity;
+import com.cn.balala.nature.nature.activity.MainActivity;
 
 public class NotificationActivity extends Activity {
 

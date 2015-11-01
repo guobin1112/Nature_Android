@@ -2,4 +2,14 @@
     <string name="app_name">Nature</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_notification_test">NotificationTestActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="info_main">Nature</string>
+    <string name="info_conference">会议</string>
+    <string name="info_tree_hole">树洞</string>
+    <string name="info_message">消息</string>
+
 </resources>
