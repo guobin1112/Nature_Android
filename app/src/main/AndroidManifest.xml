@@ -24,7 +24,8 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".nature.activity.MainActivity"
-            android:label="@string/title_activity_main">
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,9 +33,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".nature.test.NotificationActivity" />
-        <activity android:name=".nature.test.PictureActivity"></activity>
-        <activity android:name=".nature.test.Main2Activity">
-        </activity>
+        <activity android:name=".nature.test.PictureActivity" />
     </application>
 
 </manifest>

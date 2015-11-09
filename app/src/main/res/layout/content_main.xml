@@ -8,36 +8,22 @@
         android:id="@+id/banner"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:layout_marginTop="56dp" />
 
     <RelativeLayout
         android:id="@+id/rl_function"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:layout_below="@+id/banner">
+        android:layout_below="@+id/banner"
+        android:layout_weight="3">
 
-        <GridView
-            android:id="@+id/gv_tools"
-            android:layout_width="match_parent"
-            android:layout_height="345dp"
-            android:background="@color/divider"
-            android:horizontalSpacing="0.5dp"
-            android:numColumns="3"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="0.5dp" />
-
-        <View
-            android:id="@+id/divider"
-            style="@style/line_divider"
-            android:layout_below="@+id/gv_tools" />
 
         <LinearLayout
             android:id="@+id/ll_nav_bar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="65dp"
             android:layout_alignParentBottom="true"
-            android:layout_below="@+id/divider"
             android:background="@color/white"
             android:paddingTop="5dp">
 
@@ -70,6 +56,24 @@
 
         </LinearLayout>
 
+        <View
+            android:id="@+id/divider"
+            style="@style/line_divider"
+            android:layout_above="@+id/ll_nav_bar" />
+
+        <com.cn.balala.nature.nature.view.NoScrollGridView
+            android:id="@+id/gv_tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/divider"
+            android:background="@color/divider"
+            android:horizontalSpacing="0.5dp"
+            android:numColumns="3"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="0.5dp" />
+
     </RelativeLayout>
 
 </LinearLayout>
+

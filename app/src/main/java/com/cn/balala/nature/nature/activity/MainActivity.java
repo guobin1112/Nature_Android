@@ -5,7 +5,9 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -49,117 +51,20 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         initView();
         init();
-    }
-
-    private void initView() {
-        llMainView = (LinearLayout) findViewById(R.id.ll_main_view);
-        gvTools = (GridView) llMainView.findViewById(R.id.gv_tools);
-
-        List<ToolModel> list = new ArrayList<>();
-        list.add(new ToolModel(R.drawable.ic_task, "会议"));
-        list.add(new ToolModel(R.drawable.ic_report, "工作报告"));
-        list.add(new ToolModel(R.drawable.ic_news, "新闻动态"));
-        list.add(new ToolModel(R.drawable.ic_leave, "请假"));
-        list.add(new ToolModel(R.drawable.ic_expense_account, "报销"));
-        list.add(new ToolModel(R.drawable.ic_check, "审批"));
-        list.add(new ToolModel(R.drawable.ic_telephone_book, "通讯录"));
-
-        ToolAdapter adapter = new ToolAdapter(this, list);
-        gvTools.setAdapter(adapter);
-
-        convenientBanner = (ConvenientBanner) findViewById(R.id.banner);
-
-
-    }
-
-    private void init() {
-        initImageLoader();
-//        loadTestDatas();
-        //本地图片例子
-//        convenientBanner.setPages(
-//                new CBViewHolderCreator<LocalImageHolderView>() {
-//                    @Override
-//                    public LocalImageHolderView createHolder() {
-//                        return new LocalImageHolderView();
-//                    }
-//                }, localImages)
-//                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-//                .setPageIndicator(new int[]{R.drawable.ic_banner_dot_choose, R.drawable.ic_banner_dot_not_choose});
-
-        //网络加载例子
-        networkImages = Arrays.asList(images);
-        convenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
-            @Override
-            public NetworkImageHolderView createHolder() {
-                return new NetworkImageHolderView();
-            }
-        }, networkImages)
-                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-                .setPageIndicator(new int[]{R.drawable.ic_banner_dot_choose, R.drawable.ic_banner_dot_not_choose});
-    }
-
-    //初始化网络图片缓存库
-    private void initImageLoader() {
-        //网络图片例子,结合常用的图片缓存库UIL,你可以根据自己需求自己换其他网络图片库
-        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
-                .cacheInMemory(true).cacheOnDisk(true).build();
-
-        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-                getApplicationContext()).defaultDisplayImageOptions(defaultOptions)
-                .threadPriority(Thread.NORM_PRIORITY - 2)
-                .denyCacheImageMultipleSizesInMemory()
-                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
-                .tasksProcessingOrder(QueueProcessingType.LIFO).build();
-        ImageLoader.getInstance().init(config);
-    }
-
-    /*
-    加入测试Views
-    * */
-    private void loadTestDatas() {
-        //本地图片集合
-        for (int position = 0; position < 7; position++)
-            localImages.add(getResId("ic_test_" + position, R.drawable.class));
-
-    }
-
-    /**
-     * 通过文件名获取资源id 例子：getResId("icon", R.drawable.class);
-     *
-     * @param variableName
-     * @param c
-     * @return
-     */
-    public static int getResId(String variableName, Class<?> c) {
-        try {
-            Field idField = c.getDeclaredField(variableName);
-            return idField.getInt(idField);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
-    }
-
-    // 开始自动翻页
-    @Override
-    protected void onResume() {
-        super.onResume();
-        //开始自动翻页
-        convenientBanner.startTurning(5000);
-    }
-
-    // 停止自动翻页
-    @Override
-    protected void onPause() {
-        super.onPause();
-        //停止翻页
-        convenientBanner.stopTurning();
     }
 
     @Override
@@ -218,6 +123,104 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void initView() {
+        llMainView = (LinearLayout) findViewById(R.id.ll_main_view);
+        gvTools = (GridView) llMainView.findViewById(R.id.gv_tools);
+
+        List<ToolModel> list = new ArrayList<>();
+        list.add(new ToolModel(R.drawable.ic_task, "会议"));
+        list.add(new ToolModel(R.drawable.ic_report, "工作报告"));
+        list.add(new ToolModel(R.drawable.ic_news, "新闻动态"));
+        list.add(new ToolModel(R.drawable.ic_leave, "请假"));
+        list.add(new ToolModel(R.drawable.ic_expense_account, "报销"));
+        list.add(new ToolModel(R.drawable.ic_check, "审批"));
+        list.add(new ToolModel(R.drawable.ic_tel_book, "通讯录"));
+        list.add(new ToolModel(R.drawable.ic_note, "备忘录"));
+        list.add(new ToolModel(R.drawable.ic_more, "更多"));
+
+        ToolAdapter adapter = new ToolAdapter(this, list);
+        gvTools.setAdapter(adapter);
+
+        convenientBanner = (ConvenientBanner) findViewById(R.id.banner);
+
+
+    }
+
+    private void init() {
+        initImageLoader();
+//        loadTestDatas();
+        //本地图片例子
+//        convenientBanner.setPages(
+//                new CBViewHolderCreator<LocalImageHolderView>() {
+//                    @Override
+//                    public LocalImageHolderView createHolder() {
+//                        return new LocalImageHolderView();
+//                    }
+//                }, localImages)
+//                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+//                .setPageIndicator(new int[]{R.drawable.ic_banner_dot_choose, R.drawable.ic_banner_dot_not_choose});
+
+        //网络加载例子
+        networkImages = Arrays.asList(images);
+        convenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
+            @Override
+            public NetworkImageHolderView createHolder() {
+                return new NetworkImageHolderView();
+            }
+        }, networkImages)
+                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
+                .setPageIndicator(new int[]{R.drawable.ic_banner_dot_choose, R.drawable.ic_banner_dot_not_choose});
+    }
+
+    //初始化网络图片缓存库
+    private void initImageLoader() {
+        //网络图片例子,结合常用的图片缓存库UIL,你可以根据自己需求自己换其他网络图片库
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                .cacheInMemory(true).cacheOnDisk(true).build();
+
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+                getApplicationContext()).defaultDisplayImageOptions(defaultOptions)
+                .threadPriority(Thread.NORM_PRIORITY - 2)
+                .denyCacheImageMultipleSizesInMemory()
+                .diskCacheFileNameGenerator(new Md5FileNameGenerator())
+                .tasksProcessingOrder(QueueProcessingType.LIFO).build();
+        ImageLoader.getInstance().init(config);
+    }
+
+    /**
+     * 通过文件名获取资源id 例子：getResId("icon", R.drawable.class);
+     *
+     * @param variableName
+     * @param c
+     * @return
+     */
+    public static int getResId(String variableName, Class<?> c) {
+        try {
+            Field idField = c.getDeclaredField(variableName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    // 开始自动翻页
+    @Override
+    protected void onResume() {
+        super.onResume();
+        //开始自动翻页
+        convenientBanner.startTurning(5000);
+    }
+
+    // 停止自动翻页
+    @Override
+    protected void onPause() {
+        super.onPause();
+        //停止翻页
+        convenientBanner.stopTurning();
+    }
+
 
     private class LocalImageHolderView implements CBPageAdapter.Holder<Integer> {
         private ImageView imageView;
