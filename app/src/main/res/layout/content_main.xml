@@ -1,79 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
-    <com.bigkoo.convenientbanner.ConvenientBanner
-        android:id="@+id/banner"
+    <FrameLayout
+        android:id="@+id/layout_fragment"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="56dp" />
+        android:layout_height="match_parent"
+        android:layout_above="@+id/divider">
 
-    <RelativeLayout
-        android:id="@+id/rl_function"
+        <fragment
+            android:name="com.cn.balala.nature.nature.fragment.MainFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <View
+        android:id="@+id/divider"
+        style="@style/line_divider"
+        android:layout_above="@+id/ll_nav_bar" />
+
+    <LinearLayout
+        android:id="@+id/ll_nav_bar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_below="@+id/banner"
-        android:layout_weight="3">
+        android:layout_height="65dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:paddingTop="5dp">
 
-
-        <LinearLayout
-            android:id="@+id/ll_nav_bar"
+        <RadioGroup
+            android:id="@+id/rg_nav_bar"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:layout_alignParentBottom="true"
-            android:background="@color/white"
-            android:paddingTop="5dp">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <RadioGroup
-                android:id="@+id/rg_nav_bar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/rb_main"
+                style="@style/rb_nav_bar"
+                android:drawableTop="@drawable/selector_rbtn_bg_main"
+                android:text="@string/info_main" />
 
-                <RadioButton
-                    style="@style/rb_nav_bar"
-                    android:drawableTop="@drawable/ic_main_choose"
-                    android:text="@string/info_main" />
+            <RadioButton
+                android:id="@+id/rb_conference"
+                style="@style/rb_nav_bar"
+                android:drawableTop="@drawable/selector_rbtn_bg_conference"
+                android:text="@string/info_conference" />
 
-                <RadioButton
-                    style="@style/rb_nav_bar"
-                    android:drawableTop="@drawable/ic_conference_not_choose"
-                    android:text="@string/info_conference" />
+            <RadioButton
+                android:id="@+id/rb_tree_hole"
+                style="@style/rb_nav_bar"
+                android:drawableTop="@drawable/selector_rbtn_bg_tree_hole"
+                android:text="@string/info_tree_hole" />
 
-                <RadioButton
-                    style="@style/rb_nav_bar"
-                    android:drawableTop="@drawable/ic_tree_hole_not_choose"
-                    android:text="@string/info_tree_hole" />
+            <RadioButton
+                android:id="@+id/rb_message"
+                style="@style/rb_nav_bar"
+                android:drawableTop="@drawable/selector_rbtn_bg_message"
+                android:text="@string/info_message" />
+        </RadioGroup>
 
-                <RadioButton
-                    style="@style/rb_nav_bar"
-                    android:drawableTop="@drawable/ic_message_not_choose"
-                    android:text="@string/info_message" />
-            </RadioGroup>
+    </LinearLayout>
 
-        </LinearLayout>
 
-        <View
-            android:id="@+id/divider"
-            style="@style/line_divider"
-            android:layout_above="@+id/ll_nav_bar" />
-
-        <com.cn.balala.nature.nature.view.NoScrollGridView
-            android:id="@+id/gv_tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_above="@+id/divider"
-            android:background="@color/divider"
-            android:horizontalSpacing="0.5dp"
-            android:numColumns="3"
-            android:scrollbars="none"
-            android:stretchMode="columnWidth"
-            android:verticalSpacing="0.5dp" />
-
-    </RelativeLayout>
-
-</LinearLayout>
+</RelativeLayout>
 

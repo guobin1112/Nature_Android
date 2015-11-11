@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.cn.balala.nature.nature.fragment.MainFragment">
+
+    <com.bigkoo.convenientbanner.ConvenientBanner
+        android:id="@+id/banner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="56dp"
+        android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/rl_function"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/banner"
+        android:layout_weight="2.5">
+
+
+        <com.cn.balala.nature.nature.view.NoScrollGridView
+            android:id="@+id/gv_tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/divider"
+            android:background="@color/divider"
+            android:horizontalSpacing="0.5dp"
+            android:numColumns="3"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="0.5dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

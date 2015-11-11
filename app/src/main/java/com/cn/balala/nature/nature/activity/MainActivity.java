@@ -8,12 +8,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.bigkoo.convenientbanner.CBPageAdapter;
@@ -38,6 +39,12 @@ public class MainActivity extends AppCompatActivity
 
     LinearLayout llMainView;
     GridView gvTools;
+    RadioGroup rgNavBar;
+    RadioButton rbMain;
+    RadioButton rbConference;
+    RadioButton rbTreeHole;
+    RadioButton rbMessage;
+
     ConvenientBanner convenientBanner;//顶部广告栏控件
     ArrayList<Integer> localImages = new ArrayList<Integer>();
 
@@ -77,28 +84,6 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -127,6 +112,11 @@ public class MainActivity extends AppCompatActivity
     private void initView() {
         llMainView = (LinearLayout) findViewById(R.id.ll_main_view);
         gvTools = (GridView) llMainView.findViewById(R.id.gv_tools);
+        rgNavBar = (RadioGroup) findViewById(R.id.rg_nav_bar);
+        rbMain = (RadioButton) findViewById(R.id.rb_main);
+        rbConference = (RadioButton) findViewById(R.id.rb_conference);
+        rbTreeHole = (RadioButton) findViewById(R.id.rb_tree_hole);
+        rbMessage = (RadioButton) findViewById(R.id.rb_message);
 
         List<ToolModel> list = new ArrayList<>();
         list.add(new ToolModel(R.drawable.ic_task, "会议"));
@@ -143,6 +133,28 @@ public class MainActivity extends AppCompatActivity
         gvTools.setAdapter(adapter);
 
         convenientBanner = (ConvenientBanner) findViewById(R.id.banner);
+        rbMain.setChecked(true);
+
+        rgNavBar.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.rb_main:
+                        Toast.makeText(MainActivity.this, "首页", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.rb_conference:
+                        Toast.makeText(MainActivity.this, "会议", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.rb_tree_hole:
+                        Toast.makeText(MainActivity.this, "树洞", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.rb_message:
+                        Toast.makeText(MainActivity.this, "消息", Toast.LENGTH_SHORT).show();
+                        break;
+
+                }
+            }
+        });
 
 
     }
