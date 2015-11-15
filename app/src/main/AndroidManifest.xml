@@ -34,6 +34,7 @@
         </activity>
         <activity android:name=".nature.test.NotificationActivity" />
         <activity android:name=".nature.test.PictureActivity" />
+        <activity android:name=".nature.test.Main2Activity"></activity>
     </application>
 
 </manifest>

@@ -26,4 +26,6 @@ dependencies {
     compile 'com.android.support:design:23.0.1'
     compile 'com.bigkoo:convenientbanner:1.1.0'
     compile files('libs/universal-image-loader-1.9.4.jar')
+    compile 'cz.msebera.android:httpclient:4.4.1.1'
+    compile files('libs/gson-2.2.4.jar')
 }

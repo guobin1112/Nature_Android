@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!--original-->
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
 
     <!--颜色定义-->
     <color name="blue">#18B5F8</color>
+    <color name="blue_darker">#FF0D8FC7</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="gray_dark">#666666</color>
@@ -14,6 +11,7 @@
     
     <!--命名定义-->
     <color name="theme">@color/blue</color>
+    <color name="theme_darker">@color/blue_darker</color>
     <color name="background">@color/white</color>
     <color name="divider">#dadada</color>
     <color name="text_primary">@color/gray_dark</color>
