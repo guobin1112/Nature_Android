@@ -43,7 +43,7 @@ public class MainClient {
 
 
     /**
-     * 登录
+     * 1.登录
      *
      * @param context
      * @param requestModel
@@ -52,9 +52,15 @@ public class MainClient {
      */
     public static void login(Context context, LoginRequestModel requestModel,
                              Class responseModel, RequestListener listener) {
-        String loginUrl = Constant.APIURL.LOGIN;
-        doBusiness(context, loginUrl, requestModel, responseModel, listener);
+        String url = Constant.APIURL.LOGIN;
+        doHttpPost(context, url, requestModel, responseModel, listener);
 
+    }
+
+    public static void getIndexInfo(Context context, IndexInfoRequestModel requestModel,
+                                    Class responseModel, RequestListener listener) {
+        String url = Constant.APIURL.GET_INDEX_INFO;
+        doHttpPost(context, url, requestModel, responseModel, listener);
     }
 
 
@@ -69,6 +75,16 @@ public class MainClient {
         public LoginRequestModel(String loginAccount, String password) {
             this.loginAccount = loginAccount;
             this.password = password;
+            this.token = getToken();
+        }
+    }
+
+    public static class IndexInfoRequestModel {
+        private String companyId;
+        private String token;
+
+        public IndexInfoRequestModel(String companyId) {
+            this.companyId = companyId;
             this.token = getToken();
         }
     }
@@ -92,14 +108,14 @@ public class MainClient {
      * @param responseModel
      * @param listener
      */
-    public static void doBusiness(final Context context, String apiUrl, Object requestModel,
+    public static void doHttpPost(final Context context, String apiUrl, Object requestModel,
                                   final Class responseModel, final RequestListener listener) {
         final ProgressDialog dialog = new ProgressDialog(context);
         dialog.show();
 
         final Gson gson = new Gson();
         final String json = gson.toJson(requestModel);
-        Log.d("NatureNet", json);
+        Log.d("NatureNetwork", json);
         final HttpPost httpPost = new HttpPost(ROOT_URL + apiUrl);
         httpPost.addHeader(HTTP.CONTENT_TYPE, "application/json");
         new Thread(new Runnable() {
@@ -111,11 +127,11 @@ public class MainClient {
                     entity.setContentEncoding("UTF-8");
                     entity.setContentType("application/json");
 
-                    Log.d("NatureNet", entity.toString());
+                    Log.d("NatureNetwork", entity.toString());
                     httpPost.setEntity(entity);
-                    Log.d("NatureNet", httpPost.toString());
+                    Log.d("NatureNetwork", httpPost.toString());
                     response = mHttpClients.execute(httpPost);
-                    Log.d("NatureNet", response.toString());
+                    Log.d("NatureNetwork", response.toString());
                     if (response != null) {
                         if (response.getStatusLine().getStatusCode() == 200) {
                             try {
@@ -124,6 +140,8 @@ public class MainClient {
                                 Gson gson = new Gson();
                                 final BaseModel model = gson.fromJson(data, BaseModel.class);
                                 model.data = gson.fromJson(data, responseModel);
+
+                                Log.d("NatureNetwork", data);
 
                                 if (listener != null) {
 

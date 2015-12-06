@@ -16,7 +16,10 @@ import com.bigkoo.convenientbanner.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.cn.balala.nature.R;
 import com.cn.balala.nature.nature.adapter.ToolAdapter;
+import com.cn.balala.nature.nature.model.IndexInfoModel;
 import com.cn.balala.nature.nature.model.ToolModel;
+import com.cn.balala.nature.nature.network.MainClient;
+import com.cn.balala.nature.nature.network.RequestListener;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -56,7 +59,6 @@ public class MainFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_main, container, false);
         initView(view);
-        init();
         return view;
     }
 
@@ -80,23 +82,34 @@ public class MainFragment extends Fragment {
 
         convenientBanner = (ConvenientBanner) view.findViewById(R.id.banner);
 
+        MainClient.getIndexInfo(getActivity(), new MainClient.IndexInfoRequestModel("f9a893a94d1c1225014d1c5620bc0001"),
+                IndexInfoModel.class, new RequestListener() {
+                    @Override
+                    public void onSuccess(Object responseModel) {
+
+                        IndexInfoModel model = (IndexInfoModel) responseModel;
+
+                        networkImages.clear();
+                        for (IndexInfoModel.BannerInfo item : model.bannerList) {
+                            networkImages.add(item.bannerUrl);
+                        }
+
+                        init();
+
+                        Toast.makeText(getActivity(), model.bannerList.toString(), Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onFail(Object responseModel) {
+                        Toast.makeText(getActivity(), "首页加载失败，请重试", Toast.LENGTH_SHORT).show();
+                    }
+                });
 
     }
 
     private void init() {
         initImageLoader();
-//        loadTestDatas();
-        //本地图片例子
-//        convenientBanner.setPages(
-//                new CBViewHolderCreator<LocalImageHolderView>() {
-//                    @Override
-//                    public LocalImageHolderView createHolder() {
-//                        return new LocalImageHolderView();
-//                    }
-//                }, localImages)
-//                //设置两个点图片作为翻页指示器，不设置则没有指示器，可以根据自己需求自行配合自己的指示器,不需要圆点指示器可用不设
-//                .setPageIndicator(new int[]{R.drawable.ic_banner_dot_choose, R.drawable.ic_banner_dot_not_choose});
-
         //网络加载例子
         networkImages = Arrays.asList(images);
         convenientBanner.setPages(new CBViewHolderCreator<NetworkImageHolderView>() {
