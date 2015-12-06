@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="custom_radio_group">
+        <attr name="text_left" format="string" />
+        <attr name="text_right" format="string" />
+    </declare-styleable>
+</resources>

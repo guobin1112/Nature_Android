@@ -8,4 +8,29 @@
     <dimen name="nav_header_height">160dp</dimen>
 
     <dimen name="space_aside">15dp</dimen>
+
+    <!--Font size-->
+    <dimen name="font_huge">20sp</dimen>
+    <dimen name="font_large">16sp</dimen>
+    <dimen name="font_normal">14sp</dimen>
+    <dimen name="font_small">10sp</dimen>
+
+    <dimen name="font_item_hospital">14sp</dimen>
+    <dimen name="font_order_large">16sp</dimen>
+    <dimen name="font_personCenter">17sp</dimen>
+    <dimen name="font_drawerLayout">16sp</dimen>
+    <dimen name="font_actionBar_title">20sp</dimen>
+    <dimen name="font_groupPurchase_FavorablePrice">20sp</dimen>
+    <dimen name="font_groupPurchase_TotalPrice">10sp</dimen>
+    <dimen name="font_groupPurchase_Distance">13sp</dimen>
+    <dimen name="font_company_data">12sp</dimen>
+
+
+    <dimen name="font_btn_huge">18sp</dimen>
+    <dimen name="font_btn_large">17sp</dimen>
+    <dimen name="font_btn_normal">16sp</dimen>
+    <dimen name="font_btn_small">12sp</dimen>
+
+    <!--Custom view size-->
+    <dimen name="custom_radio_group_height">32dp</dimen>
 </resources>

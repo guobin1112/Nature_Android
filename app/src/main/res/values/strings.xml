@@ -11,6 +11,9 @@
     <string name="info_conference">会议</string>
     <string name="info_tree_hole">树洞</string>
     <string name="info_message">消息</string>
+    <string name="info_company_news">公司动态</string>
+    <string name="info_industry_news">行业动态</string>
+
     <string name="title_activity_main3">Main3Activity</string>
 
     <!-- TODO: Remove or change this placeholder text -->

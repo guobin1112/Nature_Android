@@ -3,10 +3,12 @@ package com.cn.balala.nature.nature.fragment;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -15,6 +17,7 @@ import com.bigkoo.convenientbanner.CBPageAdapter;
 import com.bigkoo.convenientbanner.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.cn.balala.nature.R;
+import com.cn.balala.nature.nature.activity.NewsActivity;
 import com.cn.balala.nature.nature.adapter.ToolAdapter;
 import com.cn.balala.nature.nature.model.IndexInfoModel;
 import com.cn.balala.nature.nature.model.ToolModel;
@@ -47,6 +50,7 @@ public class MainFragment extends Fragment {
             "http://p0.so.qhimg.com/t01b059c1789b4175d0.jpg"
     };
 
+    List<ToolModel> list = new ArrayList<>();
 
     public MainFragment() {
         // Required empty public constructor
@@ -66,7 +70,7 @@ public class MainFragment extends Fragment {
         gvTools = (GridView) view.findViewById(R.id.gv_tools);
 
 
-        List<ToolModel> list = new ArrayList<>();
+
         list.add(new ToolModel(R.drawable.ic_task, "会议"));
         list.add(new ToolModel(R.drawable.ic_report, "工作报告"));
         list.add(new ToolModel(R.drawable.ic_news, "新闻动态"));
@@ -105,6 +109,19 @@ public class MainFragment extends Fragment {
                         Toast.makeText(getActivity(), "首页加载失败，请重试", Toast.LENGTH_SHORT).show();
                     }
                 });
+
+        gvTools.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                Toast.makeText(getActivity(), list.get(i).toolName, Toast.LENGTH_SHORT).show();
+
+                if (i == 2) {
+                    Intent intent = new Intent(getActivity(), NewsActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
 
     }
 
