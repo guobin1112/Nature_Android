@@ -2,12 +2,15 @@
 <resources>
 
     <!--颜色定义-->
-    <color name="blue">#18B5F8</color>
-    <color name="blue_darker">#FF0D8FC7</color>
+    <color name="blue">#3692c5</color>
+    <color name="blue_darker">#3283b0</color>
+    <color name="blue_light">#4387ac</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="gray_dark">#666666</color>
-    <color name="gray_light">#999999</color>
+    <color name="gray_dark">#0c0c0c</color>
+    <color name="gray_light">#595959</color>
+    <color name="red">#fe0000</color>
+    <color name="yellow">#ffea01</color>
     
     <!--命名定义-->
     <color name="theme">@color/blue</color>
@@ -16,4 +19,7 @@
     <color name="divider">#dadada</color>
     <color name="text_primary">@color/gray_dark</color>
     <color name="text_second">@color/gray_light</color>
+    <color name="disabled">#848283</color>
+    <color name="background_blue">#dae4e5</color>
+
 </resources>

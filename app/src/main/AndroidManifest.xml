@@ -15,6 +15,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:allowBackup="true"
@@ -34,8 +35,11 @@
         <activity android:name=".nature.test.NotificationActivity" />
         <activity android:name=".nature.test.PictureActivity" />
         <activity android:name=".nature.test.Main2Activity" />
-        <activity android:name=".nature.activity.NewsActivity"></activity>
-        <activity android:name=".nature.test.SocketTestActivity"></activity>
+        <activity android:name=".nature.activity.NewsActivity" />
+        <activity android:name=".nature.test.SocketTestActivity" />
+        <activity android:name=".nature.test.RecordTestActivity">
+
+        </activity>
     </application>
 
 </manifest>
