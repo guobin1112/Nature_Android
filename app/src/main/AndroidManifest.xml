@@ -40,6 +40,10 @@
         <activity android:name=".nature.test.RecordTestActivity">
 
         </activity>
+        <activity
+            android:name=".nature.activity.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
     </application>
 
 </manifest>
