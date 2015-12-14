@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_blue"
+    tools:context="com.cn.balala.nature.nature.activity.PreConferenceActivity">
+
+    <ImageView
+        android:id="@+id/iv_logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:src="@drawable/ic_pre_conference_logo" />
+
+    <LinearLayout
+        android:id="@+id/ll_conference_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_conference_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="第一季度总结大会"
+            android:textColor="@color/text_primary"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_conference_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="9:00 am"
+            android:textColor="@color/red"
+            android:textSize="50sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/info_conference_address"
+                android:textColor="@color/red" />
+
+            <TextView
+                android:id="@+id/tv_conference_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="A-307"
+                android:textColor="@color/red" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_conference_info"
+        android:layout_marginTop="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_conference_info"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@drawable/shape_rounded_btn_blue"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:text="@string/info_conference_info"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <Button
+            android:id="@+id/btn_conference_material"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_rounded_btn_yellow"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:text="@string/info_conference_material"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+
+        <Button
+            android:id="@+id/btn_conference_entrance"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shape_rounded_btn_blue"
+            android:paddingLeft="70dp"
+            android:paddingRight="70dp"
+            android:text="@string/info_conference_entrance"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

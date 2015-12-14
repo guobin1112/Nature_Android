@@ -37,13 +37,8 @@
         <activity android:name=".nature.test.Main2Activity" />
         <activity android:name=".nature.activity.NewsActivity" />
         <activity android:name=".nature.test.SocketTestActivity" />
-        <activity android:name=".nature.test.RecordTestActivity">
-
-        </activity>
-        <activity
-            android:name=".nature.activity.LoginActivity"
-            android:label="@string/title_activity_login" >
-        </activity>
+        <activity android:name=".nature.test.RecordTestActivity"></activity>
+        <activity android:name=".nature.activity.PreConferenceActivity"></activity>
     </application>
 
 </manifest>
