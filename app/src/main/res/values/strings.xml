@@ -13,7 +13,10 @@
     <string name="info_message">消息</string>
     <string name="info_company_news">公司动态</string>
     <string name="info_industry_news">行业动态</string>
-
+    <string name="info_conference_info">会议信息</string>
+    <string name="info_conference_material">会议资料</string>
+    <string name="info_conference_entrance">进入会议</string>
+    <string name="info_conference_address">地点：</string>
     <string name="title_activity_main3">Main3Activity</string>
 
     <!-- TODO: Remove or change this placeholder text -->
