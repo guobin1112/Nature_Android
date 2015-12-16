@@ -4,7 +4,7 @@
     android:layout_height="120dp"
     android:background="@color/white">
     <TextView
-        android:id="@+id/tv_message_name"
+        android:id="@+id/tv_conference_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="第一季度总结大会"
@@ -18,17 +18,17 @@
         android:text="会议时间:"
         android:textSize="@dimen/font_normal"
         android:textColor="@color/gray_light"
-        android:layout_below="@+id/tv_message_name"
+        android:layout_below="@+id/tv_conference_name"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"/>
     <TextView
-        android:id="@+id/tv_message_time"
+        android:id="@+id/tv_conference_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="2015/12/12&#160;&#160;&#160;&#160;9:00am"
         android:textSize="@dimen/font_normal"
         android:textColor="@color/gray_light"
-        android:layout_below="@+id/tv_message_name"
+        android:layout_below="@+id/tv_conference_name"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="90dp"/>
     <TextView
@@ -37,17 +37,17 @@
         android:text="会议地点:"
         android:textSize="@dimen/font_normal"
         android:textColor="@color/gray_light"
-        android:layout_below="@+id/tv_message_time"
+        android:layout_below="@+id/tv_conference_time"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"/>
     <TextView
-        android:id="@+id/tv_message_place"
+        android:id="@+id/tv_conference_place"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="A3-307"
         android:textSize="@dimen/font_normal"
         android:textColor="@color/gray_light"
-        android:layout_below="@+id/tv_message_time"
+        android:layout_below="@+id/tv_conference_time"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="90dp"/>
     <TextView
@@ -56,17 +56,17 @@
         android:text="负责人:"
         android:textSize="@dimen/font_normal"
         android:textColor="@color/gray_light"
-        android:layout_below="@+id/tv_message_place"
+        android:layout_below="@+id/tv_conference_place"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="20dp"/>
     <TextView
-        android:id="@+id/tv_message_responsible_person"
+        android:id="@+id/tv_conference_responsible_person"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="吴彦祖"
         android:textSize="@dimen/font_normal"
         android:textColor="@color/gray_light"
-        android:layout_below="@+id/tv_message_place"
+        android:layout_below="@+id/tv_conference_place"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="90dp"/>
     <ImageButton
