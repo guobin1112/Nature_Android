@@ -222,8 +222,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_conference_time_after"
-            android:layout_marginTop="10dp"
             android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
             android:text="@string/info_conference_finish"
             android:textColor="@color/red"
             android:textSize="25sp" />
@@ -237,7 +237,8 @@
         android:layout_marginBottom="65dp"
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/linearLayout">
 
         <Button
             android:id="@+id/btn_conference_info"
