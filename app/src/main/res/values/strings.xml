@@ -17,6 +17,9 @@
     <string name="info_conference_material">会议资料</string>
     <string name="info_conference_entrance">进入会议</string>
     <string name="info_conference_address">地点：</string>
+    <string name="info_leave">请假</string>
+    <string name="info_current_conference_speaker">当前发言人:</string>
+    <string name="info_conference_finish">会议结束！</string>
     <string name="title_activity_main3">Main3Activity</string>
     <string name="title_activity_login">LoginActivity</string>
 

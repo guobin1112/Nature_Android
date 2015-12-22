@@ -7,68 +7,234 @@
     tools:context="com.cn.balala.nature.nature.activity.PreConferenceActivity">
 
     <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_arrow_gary_left" />
+
+    <TextView
+        android:id="@+id/tv_other"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_back"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:text="@string/info_leave"
+        android:textColor="@color/text_primary"
+        android:textSize="20sp" />
+
+    <ImageView
         android:id="@+id/iv_logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/ic_pre_conference_logo" />
 
-    <LinearLayout
-        android:id="@+id/ll_conference_info"
+
+    <RelativeLayout
+        android:id="@+id/rl_before_conference"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
+        android:layout_below="@+id/iv_logo"
+        android:layout_marginTop="40dp"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:id="@+id/ll_conference_info_before"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_conference_title_before"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="60dp"
+                android:gravity="center"
+                android:text="第一季度总结大会"
+                android:textColor="@color/text_primary"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_conference_time_before"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="9:00 am"
+                android:textColor="@color/red"
+                android:textSize="50sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/info_conference_address"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    android:id="@+id/tv_conference_address_before"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="A-307"
+                    android:textColor="@color/red" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_during_conference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_logo"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
+
 
         <TextView
             android:id="@+id/tv_conference_title"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center"
             android:text="第一季度总结大会"
             android:textColor="@color/text_primary"
             android:textSize="25sp" />
 
         <TextView
             android:id="@+id/tv_conference_time"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_conference_title"
+            android:layout_below="@id/tv_conference_title"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_conference_time"
+            android:drawablePadding="5dp"
             android:gravity="center"
             android:text="9:00 am"
             android:textColor="@color/red"
-            android:textSize="50sp" />
+            android:textSize="18sp" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_conference_address"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:paddingTop="10dp">
+            android:layout_alignRight="@+id/tv_conference_title"
+            android:layout_below="@id/tv_conference_title"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_conference_location"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="A-307"
+            android:textColor="@color/red"
+            android:textSize="18sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="@string/info_conference_address"
-                android:textColor="@color/red" />
+        <TextView
+            android:id="@+id/tv_conference_speaker_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_conference_time"
+            android:layout_marginTop="10dp"
+            android:text="@string/info_current_conference_speaker"
+            android:textColor="@color/red"
+            android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/tv_conference_address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:text="A-307"
-                android:textColor="@color/red" />
+        <TextView
+            android:id="@+id/tv_conference_speaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_conference_address"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/tv_conference_speaker_info"
+            android:text="吴彦祖"
+            android:textColor="@color/red"
+            android:textSize="25sp" />
 
-        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_after_conference"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_logo"
+        android:layout_marginTop="40dp"
+        android:gravity="center_horizontal"
+        android:visibility="visible">
 
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_conference_title_after"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="第一季度总结大会"
+            android:textColor="@color/text_primary"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/tv_conference_time_after"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_conference_title_after"
+            android:layout_below="@id/tv_conference_title_after"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_conference_time_after"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="9:00 am"
+            android:textColor="@color/disabled"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_conference_address_after"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/tv_conference_title_after"
+            android:layout_below="@id/tv_conference_title_after"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_conference_location_after"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="A-307"
+            android:textColor="@color/disabled"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_conference_speaker_info_after"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_conference_time_after"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:text="@string/info_conference_finish"
+            android:textColor="@color/red"
+            android:textSize="25sp" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ll_conference_info"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="65dp"
         android:layout_marginTop="30dp"
         android:gravity="center_horizontal"
         android:orientation="vertical">
@@ -103,7 +269,7 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/shape_rounded_btn_blue"
+            android:background="@drawable/shape_rounded_btn_disabled"
             android:paddingLeft="70dp"
             android:paddingRight="70dp"
             android:text="@string/info_conference_entrance"
