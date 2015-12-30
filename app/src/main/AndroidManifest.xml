@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cn.balala.nature">
+    package="com.cn.balala.nature" >
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -22,10 +22,10 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar">
+        android:theme="@style/AppTheme.NoActionBar" >
         <activity
             android:name=".nature.activity.MainActivity"
-            android:label="@string/title_activity_main">
+            android:label="@string/title_activity_main" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -37,11 +37,19 @@
         <activity android:name=".nature.test.Main2Activity" />
         <activity android:name=".nature.activity.NewsActivity" />
         <activity android:name=".nature.test.SocketTestActivity" />
-        <activity android:name=".nature.test.RecordTestActivity"></activity>
-        <activity android:name=".nature.activity.PreConferenceActivity"></activity>
+        <activity android:name=".nature.test.RecordTestActivity" />
+        <activity android:name=".nature.activity.PreConferenceActivity" />
         <activity
             android:name=".nature.activity.LoginActivity"
             android:label="@string/title_activity_login" >
+        </activity>
+        <activity
+            android:name=".nature.activity.SearchActivity"
+            android:label="@string/title_activity_search" >
+        </activity>
+        <activity
+            android:name=".nature.activity.ApplicationMeetingActivity"
+            android:label="@string/title_activity_application_meeting" >
         </activity>
     </application>
 

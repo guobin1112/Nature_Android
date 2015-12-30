@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cn.balala.nature.nature.activity.SearchActivity">
+<EditText
+    android:id="@+id/et_search"
+    android:layout_width="match_parent"
+    android:layout_height="30dp"
+    android:background="@drawable/shape_rounded_search"
+    android:drawableLeft="@drawable/ic_search"
+    android:hint="搜索"
+    android:layout_toLeftOf="@+id/tv_cancel"
+    android:layout_margin="10dp"
+    android:padding="5dp"
+    />
+    <TextView
+        android:id="@+id/tv_cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="取消"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignParentRight="true"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_search"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_keynote_speaker"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="主讲人"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_department"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="部门"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_time"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时间"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"/>
+
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
