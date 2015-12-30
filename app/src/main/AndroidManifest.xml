@@ -22,15 +22,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme.NoActionBar" >
+        android:theme="@style/AppTheme" >
         <activity
+            android:theme="@style/AppTheme.NoActionBar"
             android:name=".nature.activity.MainActivity"
             android:label="@string/title_activity_main" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".nature.test.NotificationActivity" />
         <activity android:name=".nature.test.PictureActivity" />
@@ -40,8 +37,12 @@
         <activity android:name=".nature.test.RecordTestActivity" />
         <activity android:name=".nature.activity.PreConferenceActivity" />
         <activity
-            android:name=".nature.activity.LoginActivity"
-            android:label="@string/title_activity_login" >
+            android:name=".nature.activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".nature.activity.SearchActivity"
@@ -51,6 +52,9 @@
             android:name=".nature.activity.ApplicationMeetingActivity"
             android:label="@string/title_activity_application_meeting" >
         </activity>
+        <activity android:name=".nature.activity.ChangePasswordActivity" />
+        <activity android:name=".nature.activity.MoreActivity" />
+        <activity android:name=".nature.activity.AboutUsActivity" />
     </application>
 
 </manifest>

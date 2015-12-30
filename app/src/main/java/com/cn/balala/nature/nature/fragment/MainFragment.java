@@ -19,10 +19,7 @@ import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.cn.balala.nature.R;
 import com.cn.balala.nature.nature.activity.NewsActivity;
 import com.cn.balala.nature.nature.adapter.ToolAdapter;
-import com.cn.balala.nature.nature.model.IndexInfoModel;
 import com.cn.balala.nature.nature.model.ToolModel;
-import com.cn.balala.nature.nature.network.MainClient;
-import com.cn.balala.nature.nature.network.RequestListener;
 import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -85,30 +82,7 @@ public class MainFragment extends Fragment {
         gvTools.setAdapter(adapter);
 
         convenientBanner = (ConvenientBanner) view.findViewById(R.id.banner);
-
-        MainClient.getIndexInfo(getActivity(), new MainClient.IndexInfoRequestModel("f9a893a94d1c1225014d1c5620bc0001"),
-                IndexInfoModel.class, new RequestListener() {
-                    @Override
-                    public void onSuccess(Object responseModel) {
-
-                        IndexInfoModel model = (IndexInfoModel) responseModel;
-
-                        networkImages.clear();
-                        for (IndexInfoModel.BannerInfo item : model.bannerList) {
-                            networkImages.add(item.bannerUrl);
-                        }
-
-                        init();
-
-                        Toast.makeText(getActivity(), model.bannerList.toString(), Toast.LENGTH_SHORT).show();
-
-                    }
-
-                    @Override
-                    public void onFail(Object responseModel) {
-                        Toast.makeText(getActivity(), "首页加载失败，请重试", Toast.LENGTH_SHORT).show();
-                    }
-                });
+       init();
 
         gvTools.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

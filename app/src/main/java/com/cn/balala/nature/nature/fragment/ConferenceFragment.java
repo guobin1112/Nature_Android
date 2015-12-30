@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.cn.balala.nature.R;
 import com.cn.balala.nature.nature.activity.ApplicationMeetingActivity;
+import com.cn.balala.nature.nature.activity.SearchActivity;
 import com.cn.balala.nature.nature.adapter.ConferenceAdapter;
 import com.cn.balala.nature.nature.moukup.ConferenceListData;
 
@@ -23,6 +25,7 @@ public class ConferenceFragment extends Fragment {
     ListView ConferenceList;
     ConferenceAdapter adapter;
     ImageView iv_add;
+    ImageButton ib_search;
 
     public ConferenceFragment() {
         // Required empty public constructor
@@ -41,6 +44,15 @@ public class ConferenceFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        ib_search= (ImageButton) view.findViewById(R.id.ib_conference_search);
+        ib_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(), SearchActivity.class);
+                startActivity(intent);
+            }
+        });
+
         ConferenceList = (ListView) view.findViewById(R.id.lv_conference);
         adapter = new ConferenceAdapter(getActivity(), ConferenceListData.getList());
         ConferenceList.setAdapter(adapter);

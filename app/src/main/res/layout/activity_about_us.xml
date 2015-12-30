@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="cn.com.dreamtouch.eip.activity.AboutUsActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/theme">
+
+        <ImageView
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_logo"/>
+
+        <TextView
+            android:id="@+id/tv_aboutus_domain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="110dp"
+            android:text="www.hzbalala.com.cn"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_aboutus_domain"
+            android:layout_centerHorizontal="true">
+            <TextView
+                android:id="@+id/tv_aboutus_app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="杭州巴拉拉科技有限公司"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                />
+           
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        
+
+        <View style="@style/line_divider" />
+
+        <TextView
+            android:padding="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_second"
+            android:text="
+杭州巴拉拉科技有限公司成立于2015年，由一群有着研发精神和创新精神的技术人员组成。公司现已拥有一支技术能力较强的研发队伍并已研发出拥有知识产权的自主平台。
+
+我们有互联网意识和前瞻性思维，抓住时代的潮流。我们有策略性的发展规划和具有活力的公司文化。本着“客户第一，诚信至上”的原则，公司将继续以良好的信誉为基础，秉承稳固与发展、求实与创新的精神，为客户提供更全面、更优质的服务。"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="15dp">
+
+        <View
+            android:id="@+id/line_news_item_top"
+            android:layout_width="1dp"
+            android:layout_height="5dp"
+            android:layout_marginLeft="12dp"
+            android:background="@color/white" />
+
+        <ImageView
+            android:id="@+id/iv_news_type"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_below="@id/line_news_item_top"
+            android:padding="2dp"
+            android:src="@drawable/ic_conference_time_after" />
+
+
+        <View
+            android:id="@+id/line_news_item_right"
+            style="@style/line_divider"
+            android:layout_width="15dp"
+            android:layout_alignTop="@id/iv_news_type"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@id/iv_news_type" />
+
+        <TextView
+            android:id="@+id/tv_news_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_news_type"
+            android:layout_toRightOf="@id/line_news_item_right"
+            android:padding="3dp"
+            android:textColor="@color/theme"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_news_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/tv_news_type"
+            android:layout_marginRight="15dp"
+            android:padding="3dp"
+            android:textColor="@color/text_second"
+            android:textSize="@dimen/font_small" />
+
+        <TextView
+            android:id="@+id/tv_news_describe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/tv_news_type"
+            android:layout_alignRight="@id/tv_news_time"
+            android:layout_below="@id/tv_news_type"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:textColor="@color/text_primary"
+            android:textSize="15sp" />
+
+        <View
+            android:id="@+id/line_news_item_bottom"
+            style="@style/line_divider"
+            android:layout_below="@id/tv_news_describe"
+            android:layout_toRightOf="@id/line_news_item_top" />
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/line_news_item_bottom"
+            android:layout_below="@id/iv_news_type"
+            android:layout_marginLeft="15dp"
+            android:background="@color/divider" />
+    </RelativeLayout>
+
+</LinearLayout>
